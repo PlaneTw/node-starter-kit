@@ -1,5 +1,11 @@
 # Dependency directories
 node_modules
 
-# Log
+# Log file
 *.log
+
+#Template
+.Ds_Store
+
+#Babel compile dir
+dist
