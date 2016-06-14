@@ -35,16 +35,37 @@ package.json scripts
 
 ## Production use no babel-node
 babel-node
->Not meant for production use
+>
+Not meant for production use
 You should not be using babel-node in production. It is unnecessarily heavy, with high memory usage due to the cache being stored in memory. You will also always experience a startup performance penalty as the entire app needs to be compiled on the fly.
 >
+package.json scripts
+```json
+{
+  "scripts": {
+    "start": "nodemon server.js --exec babel-node --presets es2015",
+    "build": "babel src/server.js -o server.js --presets es2015",
+    "serv": "node server.js"
+  }
+}
+```
+
+## Use .babelrc
+
+.babelrc
+```json
+{
+    "presets": ["es2015"],
+    "plugins": []
+}
+```
 
 package.json scripts
 ```json
 {
   "scripts": {
-    "start": "nodemon server.js --exec babel-node --presets es2015"
-    "build": "babel src/server.js -o server.js --presets es2015",
+    "start": "nodemon server.js --exec babel-node",
+    "build": "babel src/server.js -o server.js",
     "serv": "node server.js"
   }
 }
