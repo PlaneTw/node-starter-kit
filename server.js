@@ -2,11 +2,19 @@ import http from 'http';
 import express from 'express';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-app.get('/', (request, response) => {
-    response.type('text/plain');
-    response.send('Hello world!');
+app.get('/', (req, res) => {
+    res.type('text/plain');
+    res.send('Hello world!');
 });
 
-app.listen(port);
+app.get('/user/:name', (req, res) => {
+    let name = req.params.name
+    res.type('text/plain');
+    res.send('Hi ' + name + '!');
+})
+
+app.listen(port, () => {
+    console.log("Node app is running at localhost : " + port );
+});
