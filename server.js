@@ -1,9 +1,12 @@
 import http from 'http';
+import express from 'express';
 
-http.createServer(
-    (request, response) => {
-        response.writeHead(200, {'Content-Type': 'text/plain'});
-        response.write('Hello world!');
-        response.end();
-    }
-).listen(3000);
+const app = express();
+const port = 3000;
+
+app.get('/', (request, response) => {
+    response.type('text/plain');
+    response.send('Hello world!');
+});
+
+app.listen(port);
