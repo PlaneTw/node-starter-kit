@@ -9,8 +9,8 @@
     "nodemon": "^1.9.2"
   },
   "scripts": {
-    "start": "nodemon server.js --exec babel-node --presets es2015",
-    "build": "babel server.js -o dist/server.js --presets es2015",
+    "start": "nodemon server.js --exec babel-node",
+    "build": "babel server.js -o dist/server.js",
     "serv": "node dist/server.js"
   },
   "author": "Plane",
