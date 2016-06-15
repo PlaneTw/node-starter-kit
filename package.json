@@ -7,7 +7,9 @@
   "devDependencies": {
     "babel-cli": "^6.9.0",
     "express": "^4.13.4",
-    "nodemon": "^1.9.2"
+    "jade": "^1.11.0",
+    "nodemon": "^1.9.2",
+    "pug": "^2.0.0-beta3"
   },
   "scripts": {
     "start": "nodemon server.js --exec babel-node",
