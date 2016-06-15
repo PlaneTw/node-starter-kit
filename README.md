@@ -76,3 +76,9 @@ package.json scripts
     npm install --save-dev express
 ```
 - [express](http://expressjs.com/)
+
+## Use pug
+```bash
+    npm install --save-dev pug
+```
+- [pug](https://www.npmjs.com/package/pug)
